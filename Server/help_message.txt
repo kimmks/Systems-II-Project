@@ -1,0 +1,61 @@
+Usage: net [options]
+  
+  This program funtions as a multithreaded database where clients
+    can request searches through CSV files and preform operations
+    while other clients are connected.
+
+  On the client side the order of the operations is as follows:
+
+    load->build->search->destroy->unload
+
+  Once a tree has been built other trees can also be built and searched.
+  Multiple searches can happen on the same tree or different trees simultaneously.
+  Only one file can be loaded in at a time. To load in the a new file the
+  current one must first be unloaded. 
+
+
+  To host the server:
+  
+    ./net -s    The program will then wait for any incoming connections. 
+
+
+ 
+  To run as the client:
+ 
+    ./net -c[other options] This will send a request to the running server.
+
+ 
+  As the client the request types are:
+
+    -S [Request]  Send a search request to the server
+ 
+      Search requests must be formated as follows:
+        
+               <FieldName>=<Value> 
+       
+      Currently the only valid fieldnames are Year, "Data Value", and State.
+      Example: ./net -cS State=HI 
+     
+    -l <FileName> Request for the server to load the specified file
+
+      The only valid files at the moment are: 'drugs.csv' and 'air_quality.csv'
+      Example: ./net -cl drugs.csv
+    
+    -b [Field]    Makes the server build a searchable tree based on the field given
+
+      The build funtion works for both files however the build time of the
+      fields in air_quality is large so at the moment only the following fields 
+      are valid:
+
+        Year, "Data Value", and State
+      Example: ./net -cb Year
+
+    -d [Field]    Makes the server remove a searchable tree based on the field given
+
+      The destroy function has the same syntax and valid fields as the build function.
+      Example: ./net -cd Year
+    
+    -u Unload the current file being used
+
+      Unloads the current file so a new one can be loaded in.
+      Example: ./net -cu

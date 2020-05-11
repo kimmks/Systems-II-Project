@@ -1,0 +1,88 @@
+/*
+ * CS 361: Server project driver
+ *
+ * Name: Andy Malone 
+ */
+
+#include <assert.h>
+#include <getopt.h>
+#include <inttypes.h>
+#include <netdb.h>
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <sys/socket.h>
+#include <sys/types.h>
+
+#include "client.h"
+#include "server.h"
+
+int cmdline (int, char **, char **, bool *, bool *);
+
+/*
+ * Usage for this driver.
+ */
+void
+usage (void)
+{
+  printf ("Usage: net [options]\n");
+  printf (" Options are:\n");
+  printf ("  -c [message]  Run as a client and send a request to the server\n");
+  printf ("  -s            Use domain as a server on port 4025\n");
+}
+
+
+int
+main (int argc, char **argv)
+{
+  char *port_number = "4025";
+  char *message = "test";
+  bool client = false;
+  bool server = false;
+  short int port = 0;
+  if (cmdline (argc, argv, &message, &client, &server) < 0)
+    {
+      usage ();
+      return EXIT_FAILURE;
+    }
+  if (client)
+    {
+      run_client("134.209.35.191", port_number, message);
+    }
+  else // server option.
+    {
+      port = 4025;
+      if (port < 4000 || port > 4100) return EXIT_FAILURE;
+      char *request = run_server ();
+      free (request);
+    }
+  return EXIT_SUCCESS;
+}
+
+/**
+ * Command line parser.
+ **/
+int
+cmdline (int argc, char **argv, char **message, bool *client, bool *server)
+{
+  int option;
+
+  while ((option = getopt (argc, argv, "hc:s")) != -1)
+    {
+      switch (option)
+        {
+        case 'h': usage();
+                  exit(EXIT_SUCCESS);
+        case 'c': *client = true;
+                  *message = optarg;
+                  break;
+        case 's': *server = true;
+                  break;
+        default:  return -1;
+        }
+    }
+
+
+  return 0;
+}

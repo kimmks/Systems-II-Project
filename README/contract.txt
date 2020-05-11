@@ -1,0 +1,44 @@
++===================+=========================+=========================+
+| Task              | Primary team member     | Secondary team member   |
++==================+=========================+==========================+
+| State machine     | Elena Trafton           | Courtenay Taylor        |
++-----------------------------------------------------------------------+
+| Persistent index  | Kearstin Kimm           | Ben Stoller             |
++-----------------------------------------------------------------------+
+| CSV parsing       | Andy Malone             | Elena Trafton           |
++-----------------------------------------------------------------------+
+| Integrity check   | Ben Stoller             | Kearstin Kimm           |
++-----------------------------------------------------------------------+
+| Mega Manager      | Courtenay Taylor        | Andy Malone             |
++-----------------------------------------------------------------------+
+| RFC Documentation | Courtenay Taylor        | Andy Malone             |
++-----------------------------------------------------------------------+
+| Memory mapping    | Elena Trafton           | Andy Malone             |
++-----------------------------------------------------------------------+
+
+
+- Whenever something is commited to the mercurial log there will be a
+clear description of what was added to the code.
+
+- All teams members will bring some form of code or questions to the
+meeting.
+
+- Code must be documented and formatted before it is commited to
+mercurial.
+
+- We will use slack to share portions of code and communicate with
+other team members.
+
+- All team members will turn a notification system on for slack.
+
+- During meetings we will peer review code and ask questions.
+
+ - Weekly goals are to be met by Monday of the following week.
+
+ - Working meetings will take place on Sunday/Monday and last 2 hours. 
+ The goal during these meetings is to work on the project in person 
+ together.
+
+ - Check-in meetings will continue to take place on Wednesdays from 
+ 7-9PM. The goal for these meetings to to make progress checks on each 
+ member and the group as a whole.

@@ -1,0 +1,53 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include "tree.h"
+
+
+int main() {
+node root = NULL;
+
+//root = insert(root, "b");
+//root = insert(root, "a");
+//root = insert(root, "c");
+root = insert(root, "10", 0);
+root = insert(root, "10.7", 0);
+root = insert(root, "10.4", 0);
+root = insert(root, "10.9", 0);
+root = insert(root, "10.89", 0);
+root = insert(root, "10.80", 0);
+root = insert(root, "9",0);
+root = insert(root, "9.765",0);
+root = insert(root, "9.9",0);
+root = insert(root, "12",0);
+root = insert(root, "47",0);
+root = insert(root, "8",0);
+root = insert(root, "90",0);
+
+printf("NUM TREE: \n");
+in(root);
+
+
+
+node root2 = NULL;
+root2 = insert(root2, "b",1);
+root2 = insert(root2, "ab",1);
+root2 = insert(root2, "cage",1);
+root2 = insert(root2, "xi",1);
+root2 = insert(root2, "x",1);
+root2 = insert(root2, "f",1);
+printf("\nLetter TREE: \n");
+in(root2);
+
+printf("\n");
+
+char *fileName = "test.txt";
+FILE *file = fopen(fileName, "w");
+fileOut(root, file);
+fwrite("\n", sizeof(char), 1, file);
+
+fileOut(root2, file);
+fwrite("\n", sizeof(char), 1, file);
+return 0;
+
+
+}

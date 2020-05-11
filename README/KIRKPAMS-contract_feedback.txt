@@ -1,0 +1,61 @@
+= KIRKPAMS ========================
+= KIRKPAMS General feedback:
+= KIRKPAMS This contract needs to be re-formatted with an appropriate
+= KIRKPAMS header, title, etc., based on the RFC instructions. See
+= KIRKPAMS https://w3.cs.jmu.edu/kirkpams/361/s19/projects/rfc1543.pdf
+= KIRKPAMS Modify this contract so that it becomes the first section of
+= KIRKPAMS your documentation.
+= KIRKPAMS ========================
+
+= KIRKPAMS ========================
+= KIRKPAMS This table must specify ALL work assignments for the entire
+= KIRKPAMS project. That includes all project phases, who is responsible
+= KIRKPAMS for making sure the repository stays cleaned up (i.e., no
+= KIRKPAMS merge conflicts), who is responsible for writing which
+= KIRKPAMS documentation section, who ensures that the components are
+= KIRKPAMS working together correctly, who works on defining the
+= KIRKPAMS protocols and interfaces, etc.
+= KIRKPAMS ========================
+
++==================+=========================+=========================+
+| Task             | Primary team member     | Secondary team member   |
++==================+=========================+=========================+
+| State machine    | Elena Trafton           | Courtenay Taylor        |
++----------------------------------------------------------------------+
+| Persistent index | Kearstin Kimm           | Ben Stoller             |
++----------------------------------------------------------------------+
+| CSV parsing      | Andy Malone             | Elena Trafton           |
++----------------------------------------------------------------------+
+| Integrity check  | Ben Stoller             | Kearstin Kimm           |
++----------------------------------------------------------------------+
+| Mega Manager     | Courtenay Taylor        | Andy Malone             |
++----------------------------------------------------------------------+
+
+
+= KIRKPAMS ========================
+= KIRKPAMS I have fixed this portion for your reference to illustrate
+= KIRKPAMS the line length requirements. Thank you for detailing
+= KIRKPAMS processes beyond the basic list on the web page. As you work,
+= KIRKPAMS you should consider amending, adding to, or removing from
+= KIRKPAMS this list. E.g., how will your team handle Mercurial merge
+= KIRKPAMS conflicts, coordinate testing, etc.
+= KIRKPAMS ========================
+
+- Whenever something is commited to the mercurial log there will be a
+clear description of what was added to the code.
+
+- We will meet every week on Wednesday from 7-9pm in ECL or one of the
+ISAT labs.
+
+- All teams members will bring some form of code or questions to the
+meeting. 
+
+- Code must be documented and formatted before it is commited to
+mercurial.
+
+- We will use slack to share portions of code and communicate with
+other team members. 
+
+- All team members will turn a notification system on for slack.
+
+- During meetings we will peer review code and ask questions.
